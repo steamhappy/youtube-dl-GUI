@@ -5,6 +5,9 @@ Public Class Form1
         Me.MaximizeBox = False
         txtDLlocation.Text = My.Settings.Output
         cbCookies.Checked = My.Settings.Cookies
+        If My.Settings.Exe = "yt-dlp.exe" Then
+            StartProcess(My.Settings.Exe, "-U")
+        End If
     End Sub
 
     Private Sub BrowseButton_Click(sender As Object, e As EventArgs) Handles BrowseButton.Click

@@ -5,6 +5,7 @@
 A basic and easy to use GUI for youtube-dl designed for Windows
 
 ### Features
+
 - Download videos from [all sites supported by youtube-dl](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md)
 - Automatically keeps [yt-dlp](https://github.com/yt-dlp/yt-dlp) updated, update support for other forks can be [requested!](https://github.com/KDunny/youtube-dl-GUI/issues)
 - Downloads can be cancelled without exiting GUI
@@ -12,26 +13,32 @@ A basic and easy to use GUI for youtube-dl designed for Windows
 - Video download directory is remembered for future launches
 
 # How to use
-1. Download a Windows version of [youtube-dl](https://github.com/ytdl-org/youtube-dl/releases) or your favourite youtube-dl fork such as [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases), refer to [Change Executable](https://github.com/KDunny/youtube-dl-GUI/blob/master/README.md#change-executable) if not using youtube-dl
+
+1. Download a Windows version of [youtube-dl](https://github.com/ytdl-org/youtube-dl/releases) or your favourite youtube-dl fork such as [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases), refer to [Change Executable](https://github.com/KDunny/youtube-dl-GUI#change-executable) if not using youtube-dl or using youtube-dl that is in a different folder than the GUI.
 2. Download a version of [youtube-dl-GUI](https://github.com/KDunny/youtube-dl-GUI/releases)
-3. Store all downloaded .exe files in the same folder
-4. Open youtube-dl-GUI.exe, select a download folder, paste a video link from [any youtube-dl supported site](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md) and click 'Download'. Downloaded video will appear in your chosen folder. Executable and download folder will now be saved for future uses.
+3. Open youtube-dl-GUI.exe, select a download folder, paste a video link from [any youtube-dl supported site](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md) and click 'Download'. Downloaded video will appear in your chosen folder. Executable and download folder will now be saved for future uses.
+
+# Dependencies
+
+If planning to use youtube-dl, the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) must be installed, it is likely that it is already installed on your computer. 
+
+### Not required but recommended
+
+- [**ffmpeg** and **ffprobe**](https://github.com/yt-dlp/yt-dlp#strongly-recommended)
 
 # Enable cookies
 
-To download age-restricted YouTube videos, cookies have to be extracted from your browser that is signed into YouTube and passed to youtube-dl, [follow youtube-dl's instructions on how to do this](https://github.com/ytdl-org/youtube-dl#how-do-i-pass-cookies-to-youtube-dl) and ensure that you save the cookies file in the same folder as youtube-dl-GUI and name it 'youtube.com_cookies.txt'
+To download age-restricted YouTube videos, cookies have to be extracted from your browser that is signed into YouTube and passed to youtube-dl, [follow youtube-dl's instructions on how to do this.](https://github.com/ytdl-org/youtube-dl#how-do-i-pass-cookies-to-youtube-dl)
 
 # Pass advanced options to youtube-dl
 
-Additional options can be passed to [youtube-dl](https://github.com/ytdl-org/youtube-dl#options) and [yt-dlp](https://github.com/yt-dlp/yt-dlp#usage-and-options) by adding them in the same field as the video link either before or after the video link just like the example below
+Additional options can be passed to [youtube-dl](https://github.com/ytdl-org/youtube-dl#options) and [yt-dlp](https://github.com/yt-dlp/yt-dlp#usage-and-options) by adding them in the same field as the video link either before or after the video link just like the example below.
 
 <img src="https://raw.githubusercontent.com/KDunny/youtube-dl-GUI/master/Advanced%20options%20example.png"/>
 
 # Change Executable
 
-By default youtube-dl is the executable ran by youtube-dl-GUI but as long as the executable is in the same folder as youtube-dl-GUI then any youtube-DL fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Enter only the file name including .exe into the text field and upon clicking 'Save', this will now be saved for the next time youtube-dl-GUI is launched.
-
-<img src="https://raw.githubusercontent.com/KDunny/youtube-dl-GUI/master/Change%20executable%20example.png"/>
+By default youtube-dl is the executable ran by youtube-dl-GUI but any youtube-DL fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Changing the executable can be done by clicking the button dedicated to it in the GUI and selecting your desired fork's exe file, this will now be saved for the next time youtube-dl-GUI is launched. This process also has to be done if you are using youtube-dl but it is stored in a different folder than the GUI is.
 
 # Missing MSVCR100.dll error
 

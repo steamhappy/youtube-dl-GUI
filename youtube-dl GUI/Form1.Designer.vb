@@ -36,6 +36,7 @@ Partial Class Form1
         Me.txtOutput = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GitHubButton = New System.Windows.Forms.Button()
+        Me.ChangeExeButton = New System.Windows.Forms.Button()
         Me.KillButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -54,7 +55,8 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Video URL:"
-        Me.ToolTip1.SetToolTip(Me.Label1, "Any site supported by youtube-dl works here." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For more information, visit the r" &
+        Me.ToolTip1.SetToolTip(Me.Label1, "Any site supported by youtube-dl works here." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Additional youtube-dl arguments can" &
+        " be added at the end of the URL if desired." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For more information, visit the r" &
         "eadme on the GitHub repo." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
         'DownloadButton
@@ -131,6 +133,19 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.GitHubButton, "Opens the GitHub repo in your default web browser.")
         Me.GitHubButton.UseVisualStyleBackColor = True
         '
+        'ChangeExeButton
+        '
+        Me.ChangeExeButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChangeExeButton.Location = New System.Drawing.Point(69, 96)
+        Me.ChangeExeButton.Name = "ChangeExeButton"
+        Me.ChangeExeButton.Size = New System.Drawing.Size(104, 23)
+        Me.ChangeExeButton.TabIndex = 11
+        Me.ChangeExeButton.Text = "Change Executable"
+        Me.ToolTip1.SetToolTip(Me.ChangeExeButton, "Specify the executable that will run to download the video." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is useful if " &
+        "you use yt-dlp instead of youtube-dl. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For more information, visit the readme o" &
+        "n the GitHub repo.")
+        Me.ChangeExeButton.UseVisualStyleBackColor = True
+        '
         'KillButton
         '
         Me.KillButton.Location = New System.Drawing.Point(336, 96)
@@ -145,6 +160,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(454, 332)
+        Me.Controls.Add(Me.ChangeExeButton)
         Me.Controls.Add(Me.KillButton)
         Me.Controls.Add(Me.GitHubButton)
         Me.Controls.Add(Me.txtOutput)
@@ -179,4 +195,5 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents GitHubButton As Button
     Friend WithEvents KillButton As Button
+    Friend WithEvents ChangeExeButton As Button
 End Class

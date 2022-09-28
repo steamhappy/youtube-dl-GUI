@@ -117,23 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>199, 18</value>
-  </metadata>
-  <metadata name="FolderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>28, 18</value>
-  </metadata>
-  <data name="cbCookies.ToolTip" xml:space="preserve">
-    <value>Extract cookies from your browser that is signed into YouTube, make sure to put it in the same folder as youtube-dl and that it is called 'youtube.com_cookies.txt'
-
-For more information, visit the readme on the GitHub repo.
-</value>
-  </data>
-  <data name="Label3.ToolTip" xml:space="preserve">
-    <value>Extract cookies from your browser that is signed into YouTube, make sure to put it in the same folder as youtube-dl and that it is called 'youtube.com_cookies.txt'
-
-For more information, visit the readme on the GitHub repo.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

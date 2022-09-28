@@ -8,5 +8,8 @@
     <Setting Name="Cookies" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="Exe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">youtube-dl.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

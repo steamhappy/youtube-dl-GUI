@@ -77,6 +77,18 @@ Namespace My
                 Me("Cookies") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("youtube-dl.exe")>  _
+        Public Property Exe() As String
+            Get
+                Return CType(Me("Exe"),String)
+            End Get
+            Set
+                Me("Exe") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

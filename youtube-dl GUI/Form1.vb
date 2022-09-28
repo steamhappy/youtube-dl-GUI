@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports Microsoft.WindowsAPICodePack.Dialogs
-
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MaximizeBox = False
@@ -19,13 +18,13 @@ Public Class Form1
     Private Sub DownloadButton_Click(sender As Object, e As EventArgs) Handles DownloadButton.Click
         My.Settings.Output = txtDLlocation.Text
         txtOutput.AppendText("youtube-DL GUI v1.0" + Environment.NewLine)
-        txtOutput.AppendText("Loading youtube-dl.exe..." + Environment.NewLine)
+        txtOutput.AppendText("Loading " + My.Settings.Exe + "..." + Environment.NewLine)
         txtOutput.ScrollToCaret()
 
         If cbCookies.Checked Then
-            StartProcess("youtube-dl.exe", "--cookies youtube.com_cookies.txt -o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
+            StartProcess(My.Settings.Exe, "--cookies youtube.com_cookies.txt -o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         Else
-            StartProcess("youtube-dl.exe", "-o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
+            StartProcess(My.Settings.Exe, "-o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         End If
         My.Settings.Cookies = cbCookies.Checked
         My.Settings.Save()
@@ -88,7 +87,9 @@ Public Class Form1
     End Sub
 
     Private Sub KillButton_Click(sender As Object, e As EventArgs) Handles KillButton.Click
-        Dim p = System.Diagnostics.Process.GetProcessesByName("youtube-dl")
+        Dim KillProcessName As String
+        KillProcessName = My.Settings.Exe.Remove(My.Settings.Exe.Length - 4)
+        Dim p = Process.GetProcessesByName(KillProcessName)
         For i As Integer = 0 To p.Count - 1
             p(i).Kill()
             txtOutput.AppendText("Download stopped by user" + Environment.NewLine)
@@ -98,5 +99,9 @@ Public Class Form1
 
     Private Sub GitHubButton_Click(sender As Object, e As EventArgs) Handles GitHubButton.Click
         System.Diagnostics.Process.Start("https://github.com/KDunny/youtube-dl-GUI")
+    End Sub
+
+    Private Sub ChangeExeButton_Click(sender As Object, e As EventArgs) Handles ChangeExeButton.Click
+        Form2.Show()
     End Sub
 End Class

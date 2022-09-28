@@ -16,7 +16,7 @@ Public Class Form1
     Private Sub BrowseButton_Click(sender As Object, e As EventArgs) Handles BrowseButton.Click
         Dim folderBrowser As CommonOpenFileDialog = New CommonOpenFileDialog()
         folderBrowser.IsFolderPicker = True
-        folderBrowser.Title = "Select download directory"
+        folderBrowser.Title = "Select download folder"
         If folderBrowser.ShowDialog() = DialogResult.OK Then
             txtDLlocation.Text = folderBrowser.FileName
         End If

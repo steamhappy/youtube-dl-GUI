@@ -35,4 +35,4 @@ By default youtube-dl is the executable ran by youtube-dl-GUI but as long as the
 
 # Missing MSVCR100.dll error
 
-youtube-dl requires the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) to be installed. To my knowledge, yt-dlp does not require it to be installed.
+youtube-dl requires the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe)) to be installed. To my knowledge, yt-dlp does not require it to be installed.

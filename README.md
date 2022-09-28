@@ -32,3 +32,7 @@ Additional options can be passed to [youtube-dl](https://github.com/ytdl-org/you
 By default youtube-dl is the executable ran by youtube-dl-GUI but as long as the executable is in the same folder as youtube-dl-GUI then any youtube-DL fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Enter only the file name including .exe into the text field and upon clicking 'Save', this will now be saved for the next time youtube-dl-GUI is launched.
 
 <img src="https://raw.githubusercontent.com/KDunny/youtube-dl-GUI/master/Change%20executable%20example.png"/>
+
+# Missing MSVCR100.dll error
+
+youtube-dl requires the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) to be installed. To my knowledge, yt-dlp does not require it to be installed.

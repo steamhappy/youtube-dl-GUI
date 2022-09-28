@@ -148,6 +148,7 @@ Partial Class Form1
         '
         'KillButton
         '
+        Me.KillButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.KillButton.Location = New System.Drawing.Point(336, 96)
         Me.KillButton.Name = "KillButton"
         Me.KillButton.Size = New System.Drawing.Size(106, 23)
@@ -157,8 +158,10 @@ Partial Class Form1
         '
         'Form1
         '
+        Me.AcceptButton = Me.DownloadButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.KillButton
         Me.ClientSize = New System.Drawing.Size(454, 332)
         Me.Controls.Add(Me.ChangeExeButton)
         Me.Controls.Add(Me.KillButton)

@@ -185,6 +185,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\final128.ico" />
+    <Content Include="Resources\final128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

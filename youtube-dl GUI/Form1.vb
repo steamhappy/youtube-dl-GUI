@@ -5,7 +5,11 @@ Public Class Form1
         Me.MaximizeBox = False
         txtDLlocation.Text = My.Settings.Output
         cbCookies.Checked = My.Settings.Cookies
+        txtOutput.AppendText("youtube-DL GUI v1.0.0" + Environment.NewLine)
         If My.Settings.Exe = "yt-dlp.exe" Then
+            Dim ProcessName As String
+            ProcessName = My.Settings.Exe.Remove(My.Settings.Exe.Length - 4)
+            txtOutput.AppendText("Checking for " + ProcessName + " updates" + Environment.NewLine)
             StartProcess(My.Settings.Exe, "-U")
         End If
     End Sub
@@ -20,7 +24,6 @@ Public Class Form1
 
     Private Sub DownloadButton_Click(sender As Object, e As EventArgs) Handles DownloadButton.Click
         My.Settings.Output = txtDLlocation.Text
-        txtOutput.AppendText("youtube-DL GUI v1.0" + Environment.NewLine)
         txtOutput.AppendText("Loading " + My.Settings.Exe + "..." + Environment.NewLine)
         txtOutput.ScrollToCaret()
 

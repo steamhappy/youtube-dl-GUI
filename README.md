@@ -38,7 +38,7 @@ Additional options can be passed to [youtube-dl](https://github.com/ytdl-org/you
 
 # Change Executable
 
-By default youtube-dl is the executable ran by youtube-dl-GUI but any youtube-DL fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Changing the executable can be done by clicking the button dedicated to it in the GUI and selecting your desired fork's exe file, this will now be saved for the next time youtube-dl-GUI is launched. This process also has to be done if you are using youtube-dl but it is stored in a different folder than the GUI is.
+By default youtube-dl is the executable ran by youtube-dl-GUI but any youtube-dl fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Changing the executable can be done by clicking the button dedicated to it in the GUI and selecting your desired fork's exe file, this will now be saved for the next time youtube-dl-GUI is launched. This process also has to be done if you are using youtube-dl but it is stored in a different folder than the GUI is.
 
 # Missing MSVCR100.dll error
 

@@ -12,7 +12,7 @@ A basic and easy to use GUI for youtube-dl designed for Windows
 - Video download directory is remembered for future launches
 
 # How to use
-1. Download a Windows version of [youtube-dl](https://github.com/ytdl-org/youtube-dl/releases) or your favourite youtube-dl fork such as [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases), refer to [Change Executable](https://github.com/KDunny/youtube-dl-GUI/edit/master/README.md#change-executable) if not using youtube-dl
+1. Download a Windows version of [youtube-dl](https://github.com/ytdl-org/youtube-dl/releases) or your favourite youtube-dl fork such as [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases), refer to [Change Executable](https://github.com/KDunny/youtube-dl-GUI/blob/master/README.md#change-executable) if not using youtube-dl
 2. Download a version of [youtube-dl-GUI](https://github.com/KDunny/youtube-dl-GUI/releases)
 3. Store all downloaded .exe files in the same folder
 4. Open youtube-dl-GUI.exe, select a download folder, paste a video link from [any youtube-dl supported site](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md) and click 'Download'. Downloaded video will appear in your chosen folder. Executable and download folder will now be saved for future uses.

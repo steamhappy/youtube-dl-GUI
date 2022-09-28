@@ -124,13 +124,13 @@
     <value>28, 18</value>
   </metadata>
   <data name="cbCookies.ToolTip" xml:space="preserve">
-    <value>Extract cookies from your browser that is signed into YouTube, make sure to put it in the same folder as youtube-dl and that it is called 'youtube.com_cookies.txt'
+    <value>Extract cookies from your browser that is signed into YouTube, select the extracted text file in the file browser after enabling this checkbox.
 
 For more information, visit the readme on the GitHub repo.
 </value>
   </data>
   <data name="Label3.ToolTip" xml:space="preserve">
-    <value>Extract cookies from your browser that is signed into YouTube, make sure to put it in the same folder as youtube-dl and that it is called 'youtube.com_cookies.txt'
+    <value>Extract cookies from your browser that is signed into YouTube, select the extracted text file in the file browser after enabling this checkbox.
 
 For more information, visit the readme on the GitHub repo.</value>
   </data>

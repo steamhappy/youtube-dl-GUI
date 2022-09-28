@@ -5,11 +5,10 @@ Public Class Form1
         Me.MaximizeBox = False
         txtDLlocation.Text = My.Settings.Output
         cbCookies.Checked = My.Settings.Cookies
-        txtOutput.AppendText("youtube-DL GUI v1.0.0" + Environment.NewLine)
-        If My.Settings.Exe = "yt-dlp.exe" Then
-            Dim ProcessName As String
-            ProcessName = My.Settings.Exe.Remove(My.Settings.Exe.Length - 4)
-            txtOutput.AppendText("Checking for " + ProcessName + " updates" + Environment.NewLine)
+        txtOutput.AppendText("youtube-DL GUI v1.1.0" + Environment.NewLine)
+        txtOutput.AppendText("Current executable: " + My.Settings.Exe + Environment.NewLine)
+        If My.Settings.Exe.Contains("yt-dlp.exe") Then
+            txtOutput.AppendText("Checking for yt-dlp updates" + Environment.NewLine)
             StartProcess(My.Settings.Exe, "-U")
         End If
     End Sub
@@ -28,7 +27,7 @@ Public Class Form1
         txtOutput.ScrollToCaret()
 
         If cbCookies.Checked Then
-            StartProcess(My.Settings.Exe, "--cookies youtube.com_cookies.txt -o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
+            StartProcess(My.Settings.Exe, "--cookies " + My.Settings.CookiesFile + " -o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         Else
             StartProcess(My.Settings.Exe, "-o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         End If
@@ -93,21 +92,44 @@ Public Class Form1
     End Sub
 
     Private Sub KillButton_Click(sender As Object, e As EventArgs) Handles KillButton.Click
-        Dim KillProcessName As String
-        KillProcessName = My.Settings.Exe.Remove(My.Settings.Exe.Length - 4)
-        Dim p = Process.GetProcessesByName(KillProcessName)
-        For i As Integer = 0 To p.Count - 1
-            p(i).Kill()
-            txtOutput.AppendText("Download stopped by user" + Environment.NewLine)
-            txtOutput.ScrollToCaret()
-        Next i
+        If My.Settings.Exe.Contains("yt-dlp") Then
+            Dim p = Process.GetProcessesByName("yt-dlp")
+            For i As Integer = 0 To p.Count - 1
+                p(i).Kill()
+                txtOutput.AppendText("Download stopped by user" + Environment.NewLine)
+                txtOutput.ScrollToCaret()
+            Next i
+        End If
+        If My.Settings.Exe.Contains("youtube-dl") Then
+            Dim p = Process.GetProcessesByName("youtube-dl")
+            For i As Integer = 0 To p.Count - 1
+                p(i).Kill()
+                txtOutput.AppendText("Download stopped by user" + Environment.NewLine)
+                txtOutput.ScrollToCaret()
+            Next i
+        End If
     End Sub
 
     Private Sub GitHubButton_Click(sender As Object, e As EventArgs) Handles GitHubButton.Click
-        System.Diagnostics.Process.Start("https://github.com/KDunny/youtube-dl-GUI")
+        Process.Start("https://github.com/KDunny/youtube-dl-GUI")
     End Sub
 
     Private Sub ChangeExeButton_Click(sender As Object, e As EventArgs) Handles ChangeExeButton.Click
-        Form2.Show()
+        Dim folderBrowser2 As CommonOpenFileDialog = New CommonOpenFileDialog()
+        If folderBrowser2.ShowDialog() = DialogResult.OK Then
+            My.Settings.Exe = folderBrowser2.FileName
+            txtOutput.AppendText("New executable: " + My.Settings.Exe + Environment.NewLine)
+            My.Settings.Save()
+        End If
+    End Sub
+
+    Private Sub cbCookies_Clicked(sender As Object, e As MouseEventArgs) Handles cbCookies.MouseClick
+        Dim folderBrowser3 As CommonOpenFileDialog = New CommonOpenFileDialog()
+        If folderBrowser3.ShowDialog() = DialogResult.OK Then
+            My.Settings.Cookies = cbCookies.Checked
+            My.Settings.CookiesFile = folderBrowser3.FileName
+            txtOutput.AppendText("Cookies file: " + My.Settings.CookiesFile + Environment.NewLine)
+            My.Settings.Save()
+        End If
     End Sub
 End Class

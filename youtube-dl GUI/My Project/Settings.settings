@@ -11,5 +11,8 @@
     <Setting Name="Exe" Type="System.String" Scope="User">
       <Value Profile="(Default)">youtube-dl.exe</Value>
     </Setting>
+    <Setting Name="CookiesFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

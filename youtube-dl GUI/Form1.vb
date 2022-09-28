@@ -16,6 +16,7 @@ Public Class Form1
     Private Sub BrowseButton_Click(sender As Object, e As EventArgs) Handles BrowseButton.Click
         Dim folderBrowser As CommonOpenFileDialog = New CommonOpenFileDialog()
         folderBrowser.IsFolderPicker = True
+        folderBrowser.Title = "Select download directory"
         If folderBrowser.ShowDialog() = DialogResult.OK Then
             txtDLlocation.Text = folderBrowser.FileName
         End If
@@ -116,6 +117,7 @@ Public Class Form1
 
     Private Sub ChangeExeButton_Click(sender As Object, e As EventArgs) Handles ChangeExeButton.Click
         Dim folderBrowser2 As CommonOpenFileDialog = New CommonOpenFileDialog()
+        folderBrowser2.Title = "Select desired youtube-dl fork executable file"
         If folderBrowser2.ShowDialog() = DialogResult.OK Then
             My.Settings.Exe = folderBrowser2.FileName
             txtOutput.AppendText("New executable: " + My.Settings.Exe + Environment.NewLine)
@@ -125,6 +127,7 @@ Public Class Form1
 
     Private Sub cbCookies_Clicked(sender As Object, e As MouseEventArgs) Handles cbCookies.MouseClick
         Dim folderBrowser3 As CommonOpenFileDialog = New CommonOpenFileDialog()
+        folderBrowser3.Title = "Select cookie text file extracted from browser"
         If folderBrowser3.ShowDialog() = DialogResult.OK Then
             My.Settings.Cookies = cbCookies.Checked
             My.Settings.CookiesFile = folderBrowser3.FileName

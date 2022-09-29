@@ -2,7 +2,7 @@
 
 # youtube-dl-GUI <br> ![version badge](https://img.shields.io/github/v/release/KDunny/youtube-dl-GUI?label=latest-release) ![downloads](https://img.shields.io/github/downloads/KDunny/youtube-dl-GUI/total)
 
-A basic and easy to use GUI for youtube-dl designed for Windows
+A basic and easy to use GUI for [youtube-dl](https://github.com/ytdl-org/youtube-dl) and youtube-dl forks designed for Windows
 
 ### Features
 
@@ -20,7 +20,7 @@ A basic and easy to use GUI for youtube-dl designed for Windows
 
 # Dependencies
 
-If planning to use youtube-dl, the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) must be installed, it is likely that it is already installed on your computer. 
+If planning to use [youtube-dl](https://github.com/ytdl-org/youtube-dl/releases), the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) must be installed, it is likely that it is already installed on your computer. 
 
 ### Not required but recommended
 
@@ -38,8 +38,8 @@ Additional options can be passed to [youtube-dl](https://github.com/ytdl-org/you
 
 # Change Executable
 
-By default youtube-dl is the executable ran by youtube-dl-GUI but any youtube-dl fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Changing the executable can be done by clicking the button dedicated to it in the GUI and selecting your desired fork's exe file, this will now be saved for the next time youtube-dl-GUI is launched. This process also has to be done if you are using youtube-dl but it is stored in a different folder than the GUI is.
+By default [youtube-dl](https://github.com/ytdl-org/youtube-dl) is the executable ran by youtube-dl-GUI but any youtube-dl fork should work, however only [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases) has been tested. Changing the executable can be done by clicking the button dedicated to it in the GUI and selecting your desired fork's exe file, this will now be saved for the next time youtube-dl-GUI is launched. This process also has to be done if you are using youtube-dl but it is stored in a different folder than the GUI is.
 
 # Missing MSVCR100.dll error
 
-youtube-dl requires the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) to be installed. To my knowledge, yt-dlp does not require it to be installed.
+[youtube-dl](https://github.com/ytdl-org/youtube-dl) requires the [Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) to be installed. [yt-dlp](https://github.com/yt-dlp/yt-dlp) does not require it to be installed.

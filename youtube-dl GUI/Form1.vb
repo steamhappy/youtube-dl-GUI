@@ -1,10 +1,11 @@
 ﻿Imports System.IO
 Imports Microsoft.WindowsAPICodePack.Dialogs
 Public Class Form1
+    ' User settings load as the program starts and checks for yt-dlp updates if it is the current executable
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.MaximizeBox = False
-        txtDLlocation.Text = My.Settings.Output
-        cbCookies.Checked = My.Settings.Cookies
+        Me.MaximizeBox = False ' Disable Windows maximize button 
+        txtDLlocation.Text = My.Settings.Output ' Loads download directory from user settings
+        cbCookies.Checked = My.Settings.Cookies ' Cookies enabled checkbox, Loads from user settings if it should be checked
         txtOutput.AppendText("youtube-DL GUI v1.1.0" + Environment.NewLine)
         txtOutput.AppendText("Current executable: " + My.Settings.Exe + Environment.NewLine)
         If My.Settings.Exe.Contains("yt-dlp.exe") Then
@@ -13,31 +14,31 @@ Public Class Form1
         End If
     End Sub
 
+    ' Load folder browser dialog so user can select download directory
     Private Sub BrowseButton_Click(sender As Object, e As EventArgs) Handles BrowseButton.Click
         Dim folderBrowser As CommonOpenFileDialog = New CommonOpenFileDialog()
-        folderBrowser.IsFolderPicker = True
+        folderBrowser.IsFolderPicker = True ' Needed so a user can't select a file instead of a folder
         folderBrowser.Title = "Select download folder"
         If folderBrowser.ShowDialog() = DialogResult.OK Then
             txtDLlocation.Text = folderBrowser.FileName
         End If
     End Sub
 
+    ' Starts downloading video and saves user settings
     Private Sub DownloadButton_Click(sender As Object, e As EventArgs) Handles DownloadButton.Click
-        My.Settings.Output = txtDLlocation.Text
+        My.Settings.Output = txtDLlocation.Text ' Saves new download directory to user settings
         txtOutput.AppendText("Loading " + My.Settings.Exe + "..." + Environment.NewLine)
         txtOutput.ScrollToCaret()
-
-        If cbCookies.Checked Then
+        If cbCookies.Checked Then ' Changes youtube-dl command if cookies enabled
             StartProcess(My.Settings.Exe, "--cookies " + My.Settings.CookiesFile + " -o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         Else
             StartProcess(My.Settings.Exe, "-o """ + txtDLlocation.Text + "\%(title)s.%(ext)s"" " + txtYTurl.Text)
         End If
-        My.Settings.Cookies = cbCookies.Checked
+        My.Settings.Cookies = cbCookies.Checked ' Cookies enabled checkbox, Saves to user settings if the box is checked or not
         My.Settings.Save()
     End Sub
 
-    Private CurrentProcessID As Integer = -1
-
+    ' Creates youtube-dl process
     Private Sub StartProcess(FileName As String, Arguments As String)
         Dim MyStartInfo As New ProcessStartInfo() With {
             .FileName = FileName,
@@ -58,8 +59,6 @@ Public Class Form1
         YTDLProcess.Start()
         YTDLProcess.BeginErrorReadLine()
         YTDLProcess.BeginOutputReadLine()
-
-        CurrentProcessID = YTDLProcess.Id
 
         AddHandler YTDLProcess.OutputDataReceived,
             Sub(sender As Object, e As DataReceivedEventArgs)
@@ -92,6 +91,7 @@ Public Class Form1
             End Sub
     End Sub
 
+    ' Cancels video download when clicked
     Private Sub KillButton_Click(sender As Object, e As EventArgs) Handles KillButton.Click
         If My.Settings.Exe.Contains("yt-dlp") Then
             Dim p = Process.GetProcessesByName("yt-dlp")
@@ -111,10 +111,12 @@ Public Class Form1
         End If
     End Sub
 
+    ' Opens GitHub repository in user's default web browser
     Private Sub GitHubButton_Click(sender As Object, e As EventArgs) Handles GitHubButton.Click
         Process.Start("https://github.com/KDunny/youtube-dl-GUI")
     End Sub
 
+    ' Allows user to change what youtube-dl fork is ran when downloading videos
     Private Sub ChangeExeButton_Click(sender As Object, e As EventArgs) Handles ChangeExeButton.Click
         Dim folderBrowser2 As CommonOpenFileDialog = New CommonOpenFileDialog()
         folderBrowser2.Title = "Select desired youtube-dl fork executable file"
@@ -125,6 +127,7 @@ Public Class Form1
         End If
     End Sub
 
+    ' Allows user to enable cookies which is necessary to download age-restricted YouTube videos
     Private Sub cbCookies_Clicked(sender As Object, e As MouseEventArgs) Handles cbCookies.MouseClick
         Dim folderBrowser3 As CommonOpenFileDialog = New CommonOpenFileDialog()
         folderBrowser3.Title = "Select cookie text file extracted from browser"
